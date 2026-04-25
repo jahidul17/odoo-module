@@ -15,9 +15,11 @@
         'base',
         'product',
         'stock',  
+        'account_asset',
     ],
     'data': [
         'views/product_asset_view.xml',
+        'views/account_asset_view.xml',
     ],
     'installable': True,
     'application': False,

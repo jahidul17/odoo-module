@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_account_asset_form_inherit_v3" model="ir.ui.view">
+        <field name="name">account.asset.form.inherit.name</field>
+        <field name="model">account.asset</field>
+        <field name="inherit_id" ref="account_asset.view_account_asset_form"/>
+        <field name="arch" type="xml">
+            
+            <xpath expr="//h1" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//h1" position="before">
+                <div class="oe_title">
+                    <label for="asset_product_ids" string="Asset Products"/>
+                    <h1>
+                        <field name="asset_product_ids" 
+                               widget="many2many_tags" 
+                               placeholder="Select Products..."
+                               options="{'no_create': True}"
+                               readonly="0"/>
+                    </h1>
+                </div>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>
