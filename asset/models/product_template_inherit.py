@@ -1,0 +1,8 @@
+from odoo import models, fields
+
+class ProductTemplate(models.Model):
+    _inherit = 'product.template'
+
+    is_asset = fields.Boolean(string="Is Asset?", default=False)
+
+    
