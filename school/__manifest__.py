@@ -13,8 +13,11 @@
 
     ],
     'data': [
+        'security/security.xml',
         'security/ir.model.access.csv',
         'views/student.xml',
+        'views/menus.xml',
+        
 
     ],
     'installable': True,

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- creating privilege -->
+        <record id="privilege_school_management" model="res.groups.privilege">
+            <field name="name">School Management</field>
+            <field name="sequence">10</field>
+        </record>
+
+        <!-- creating group -->
+        <record id="group_student" model="res.groups">
+            <field name="name">Student</field>
+            <field name="privilege_id" ref="privilege_school_management"/>
+        </record>
+
+        <!-- creating group -->
+        <record id="group_teacher" model="res.groups">
+            <field name="name">Teacher</field>
+            <field name="privilege_id" ref="privilege_school_management"/>
+        </record>
+
+        <!-- creating group -->
+        <record id="group_hr" model="res.groups">
+            <field name="name">HR</field>
+            <field name="privilege_id" ref="privilege_school_management"/>
+        </record>
+
+        <!-- <record id="appointment_rule" model="ir.rule">
+            <field name="name">Project: See Own Records</field>
+            <field name="model_id" ref="module_learning.model_patient_appointment"/>
+            <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+            <field name="domain_force">[('create_uid', '=', user.id)]</field>
+        </record> -->
+
+    </data>
+</odoo>

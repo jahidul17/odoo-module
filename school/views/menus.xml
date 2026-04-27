@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_school_root" 
+              name="School Management" 
+              sequence="10"/>
+
+    <menuitem id="menu_school_student" 
+              name="Students" 
+              parent="menu_school_root" 
+              sequence="10" 
+              groups="school.group_student,school.group_hr,school.group_teacher"/>
+
+    <menuitem id="menu_school_student_menu1" 
+              name="Student1" 
+              parent="menu_school_student" 
+              action="action_school_student" 
+              sequence="10"/>
+    <menuitem id="menu_school_student_menu2" 
+              name="Student2" 
+              parent="menu_school_student" 
+              action="action_school_student" 
+              sequence="20"/>
+    <menuitem id="menu_school_student_menu3" 
+              name="Student3" 
+              parent="menu_school_student" 
+              action="action_school_student" 
+              sequence="30"/>
+
+    <menuitem id="menu_school_teacher" 
+              name="Teacher" 
+              parent="menu_school_root"
+              sequence="20" 
+              groups="school.group_hr,school.group_teacher"/> <menuitem id="menu_school_teacher_menu1" 
+              name="Teacher1" 
+              parent="menu_school_teacher" 
+              action="action_school_student" 
+              sequence="10"/>
+    <menuitem id="menu_school_teacher_menu2" 
+              name="Teacher2" 
+              parent="menu_school_teacher" 
+              action="action_school_student" 
+              sequence="20"/>
+    <menuitem id="menu_school_teacher_menu3" 
+              name="Teacher3" 
+              parent="menu_school_teacher" 
+              action="action_school_student" 
+              sequence="30"/>
+
+    <menuitem id="menu_school_subject" 
+              name="Subject" 
+              parent="menu_school_root"
+              sequence="30" 
+              groups="school.group_student,school.group_hr"/> <menuitem id="menu_school_subject_menu1" 
+              name="Subject1" 
+              parent="menu_school_subject" 
+              action="action_school_student" 
+              sequence="10"/>
+    <menuitem id="menu_school_subject_menu2" 
+              name="Subject2" 
+              parent="menu_school_subject" 
+              action="action_school_student" 
+              sequence="20"/>
+    <menuitem id="menu_school_subject_menu3" 
+              name="Subject3" 
+              parent="menu_school_subject" 
+              action="action_school_student" 
+              sequence="30"/>
+</odoo>
