@@ -2,3 +2,4 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 school.access_student_model,access_student,school.model_student_model,school.group_student,1,0,0,0
 school.access_teacher_model,access_teacher,school.model_student_model,school.group_teacher,1,1,1,0
 school.access_hr_model,access_hr,school.model_student_model,school.group_hr,1,1,1,1
+access_student_roll_update_wizard,student.roll.update.wizard,model_student_roll_update_wizard,base.group_user,1,1,1,1

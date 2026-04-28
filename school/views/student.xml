@@ -23,6 +23,13 @@
                 <!-- <header>
                     <button name="explore_orm_operations" string="Explore ORM" type="object" class="oe_highlight" />
                 </header> -->
+
+                <header>
+                    <button name="%(school.action_student_roll_update_wizard)d" 
+                            string="Update Roll via Wizard" 
+                            type="action" 
+                            class="oe_highlight"/>
+                </header>
                 <sheet>
                     
                     <!-- <div>

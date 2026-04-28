@@ -15,6 +15,7 @@
     'data': [
         'security/security.xml',
         'security/ir.model.access.csv',
+        'wizard/student_roll_update_view.xml',
         'views/student.xml',
         'views/menus.xml',
         

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_student_roll_update_wizard_form" model="ir.ui.view">
+        <field name="name">student.roll.update.wizard.form</field>
+        <field name="model">student.roll.update.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Update Roll Number">
+                <sheet>
+                    <group>
+                        <field name="new_roll"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="Update Now" name="action_update_roll" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_student_roll_update_wizard" model="ir.actions.act_window">
+        <field name="name">Update Student Roll</field>
+        <field name="res_model">student.roll.update.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>
