@@ -7,7 +7,6 @@
             <field name="sequence">10</field>
         </record>
 
-        <!-- creating group -->
         <record id="group_student" model="res.groups">
             <field name="name">Student</field>
             <field name="privilege_id" ref="privilege_school_management"/>
