@@ -20,9 +20,9 @@
         <field name="arch" type="xml">
             <form>
                 <!-- Explore odoo CURD operations  -->
-                <header>
+                <!-- <header>
                     <button name="explore_orm_operations" string="Explore ORM" type="object" class="oe_highlight" />
-                </header>
+                </header> -->
                 <sheet>
                     
                     <!-- <div>
@@ -79,6 +79,26 @@
                     </t>
                 </templates>
             </kanban>
+        </field>
+    </record>
+
+    <record id="view_student_search" model="ir.ui.view">
+        <field name="name">student.model.search</field>
+        <field name="model">student.model</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Student Name"/>
+                <field name="roll"/>
+
+                <filter string="Male Students" name="male_filter" domain="[('gender', '=', 'male')]"/>
+                <filter string="Female Students" name="female_filter" domain="[('gender', '=', 'female')]"/>
+                
+                <separator/> 
+
+                
+                <filter string="Gender" name="group_by_gender" context="{'group_by': 'gender'}"/>
+                
+            </search>
         </field>
     </record>
 
