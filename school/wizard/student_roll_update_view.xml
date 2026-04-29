@@ -11,7 +11,7 @@
                     </group>
                 </sheet>
                 <footer>
-                    <button string="Update Now" name="action_update_roll" type="object" class="btn-primary"/>
+                    <button string="Update" name="action_update_roll" type="object" class="btn-primary"/>
                     <button string="Cancel" class="btn-secondary" special="cancel"/>
                 </footer>
             </form>
