@@ -31,6 +31,15 @@
                             class="oe_highlight"/>
                 </header>
                 <sheet>
+
+                    <div class="oe_button_box" name="button_box">
+                    <button name="action_view_classmates" 
+                            type="object" 
+                            class="oe_stat_button" 
+                            icon="fa-graduation-cap">
+                        <field name="classmate_count" widget="statinfo" string="Classmates"/>
+                    </button>
+                    </div>
                     
                     <!-- <div>
                         <h1>

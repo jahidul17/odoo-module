@@ -5,6 +5,7 @@ from odoo.exceptions import ValidationError
 class Student(models.Model):
     _name="student.model"
     _description="Student Model"
+    
 
     roll=fields.Integer(string="Roll Number", copy=False)
 
@@ -30,6 +31,27 @@ class Student(models.Model):
     ],string='Gender', default="male")
     birth_day=fields.Date(string="Date of Birth")
     address=fields.Text(string='Address')
+
+    classmate_count = fields.Integer(compute='_compute_classmate_count', string="Classmates")
+
+    def _compute_classmate_count(self):
+        for record in self:
+            count = self.env['student.model'].search_count([
+                ('gender', '=', record.gender),
+                ('id', '!=', record.id)
+            ])
+            record.classmate_count = count
+
+    def action_view_classmates(self):
+        return {
+            'name': _('Classmates'),
+            'type': 'ir.actions.act_window',
+            'res_model': 'student.model',
+            'view_mode': 'list,form',
+            'domain': [('gender', '=', self.gender), ('id', '!=', self.id)],
+            'context': {'default_gender': self.gender},
+            'target': 'current',
+        }
 
     
     # def explore_orm_operations(self):
