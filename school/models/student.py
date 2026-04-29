@@ -5,6 +5,7 @@ from odoo.exceptions import ValidationError
 class Student(models.Model):
     _name="student.model"
     _description="Student Model"
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     
 
     roll=fields.Integer(string="Roll Number", copy=False)
@@ -22,13 +23,13 @@ class Student(models.Model):
             if existing_student:
                 raise ValidationError(_("Roll No %s already exists!") % record.roll)
 
-    name=fields.Char(string="Name")
+    name=fields.Char(string="Name", tracking=True)
     photo=fields.Image(string='Student Photo',max_width=1920,max_height=1920,verify_resolution=False)
     gender=fields.Selection([
         ('male','Male'),
         ('female','Female'),
         ('other','Other'),
-    ],string='Gender', default="male")
+    ],string='Gender', default="male", tracking=True)
     birth_day=fields.Date(string="Date of Birth")
     address=fields.Text(string='Address')
 

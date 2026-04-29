@@ -9,9 +9,7 @@
     'category': 'Education',
     'author': 'Zahidul Islam', 
     'license': 'LGPL-3',
-    'depends': [
-
-    ],
+    'depends': ['base', 'mail'],
     'data': [
         'security/security.xml',
         'security/ir.model.access.csv',
