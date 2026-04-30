@@ -1,6 +1,6 @@
 from odoo import fields, models, api,_
 from odoo.exceptions import ValidationError
-
+import base64
 
 class Student(models.Model):
     _name="student.model"
@@ -34,6 +34,9 @@ class Student(models.Model):
     address=fields.Text(string='Address')
 
     classmate_count = fields.Integer(compute='_compute_classmate_count', string="Classmates")
+ 
+ 
+ #------------------------Smart button add-------------------------------------
 
     def _compute_classmate_count(self):
         for record in self:
@@ -54,7 +57,9 @@ class Student(models.Model):
             'target': 'current',
         }
 
-    
+
+#------------------------Explore ORM and .env Operations-------------------------------------
+
     # def explore_orm_operations(self):
     #     print("\n"+"="*30)
     #     print(" ORM operations start")
@@ -102,6 +107,8 @@ class Student(models.Model):
     #     print('=================Thanks====================')
     
 
+
+#------------------------Explore search and filter method Operations-------------------------------------
 
     # def explore_orm_operations(self):
     #     print("\n" + "="*40)

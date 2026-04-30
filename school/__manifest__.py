@@ -16,8 +16,6 @@
         'wizard/student_roll_update_view.xml',
         'views/student.xml',
         'views/menus.xml',
-        
-
     ],
     'installable': True,
     'application': True,
