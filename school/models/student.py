@@ -35,9 +35,11 @@ class Student(models.Model):
     team_member_ids=fields.Many2many('student.model','student_tema_rel','student_id','member_id',string="Team Members")
     classmate_count = fields.Integer(compute='_compute_classmate_count', string="Classmates")
 
+ #------------------------Status Bar add-------------------------------------
     state = fields.Selection([
         ('draft', 'Draft'),
         ('enrolled', 'Enrolled'),
+        ('on_hold', 'On Hold'),
         ('suspended', 'Suspended'),
         ('graduated', 'Graduated'),
     ], string="Status", default='draft', tracking=True)
@@ -51,6 +53,9 @@ class Student(models.Model):
     def action_suspend(self):
         for record in self:
             record.state = 'suspended'
+    
+    def action_on_hold(self):
+        self.state = 'on_hold'
  
  
  #------------------------Smart button add-------------------------------------

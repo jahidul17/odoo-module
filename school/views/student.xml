@@ -37,8 +37,10 @@
                     <button name="action_graduate" string="Graduate" 
                             type="object" invisible="state != 'enrolled'"/>
 
+                    <button name="action_on_hold" string="Put on Hold" type="object" invisible="state != 'enrolled'"/>
 
-                    <field name="state" widget="statusbar" statusbar_visible="draft,enrolled,graduated"/>
+
+                    <field name="state" widget="statusbar" statusbar_visible="draft,enrolled,graduated" options="{'clickable': '1'}"/>
                 </header>
                 
                 <sheet>
