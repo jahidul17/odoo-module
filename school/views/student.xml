@@ -66,6 +66,17 @@
                             <field name="address"/>
                         </group>
                     </group>
+
+                    <!-- TEAM COMPOSITION -->
+    
+                    <group string="TEAM COMPOSITION">
+                        <field name="team_member_ids" widget="many2many_list" nolabel="1" colspan="2">
+                            <list editable="top">
+                                <field name="name" style="min-width: 250px;"/>
+                                <field name="roll"/>
+                            </list>
+                        </field>
+                    </group>
                 </sheet>
                 <chatter/>
             </form>

@@ -32,7 +32,7 @@ class Student(models.Model):
     ],string='Gender', default="male", tracking=True)
     birth_day=fields.Date(string="Date of Birth")
     address=fields.Text(string='Address')
-
+    team_member_ids=fields.Many2many('student.model','student_tema_rel','student_id','member_id',string="Team Members")
     classmate_count = fields.Integer(compute='_compute_classmate_count', string="Classmates")
  
  
