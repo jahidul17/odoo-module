@@ -29,7 +29,18 @@
                             string="Update Roll via Wizard" 
                             type="action" 
                             class="oe_highlight"/>
+                        
+                    <button name="action_enroll" string="Enroll Student" 
+                            type="object" class="oe_highlight" 
+                            invisible="state != 'draft'"/>
+        
+                    <button name="action_graduate" string="Graduate" 
+                            type="object" invisible="state != 'enrolled'"/>
+
+
+                    <field name="state" widget="statusbar" statusbar_visible="draft,enrolled,graduated"/>
                 </header>
+                
                 <sheet>
 
                     <div class="oe_button_box" name="button_box">
