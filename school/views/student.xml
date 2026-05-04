@@ -71,11 +71,13 @@
                             <field name="photo" widget="image" class="oe_avatar" options="{'preview_image':'photo'}"/>
                         </group>
                         <group string="Basic Info">
-                            <field name="name"/>
+                            <field name="name" help="Write your name"/>
                             <field name="birth_day"/>
+                            <!-- <field name="additional_info" widget="ace" options="{'mode': 'python'}"/> -->
                         </group>
                         <group string="Optional Info">
                             <field name="gender"/>
+                            <field name="division"/>
                             <field name="address"/>
                         </group>
                     </group>
@@ -90,6 +92,12 @@
                             </list>
                         </field>
                     </group>
+
+                    <notebook>
+                        <page string="About Student">
+                            <field name="about_html" widget="html" options="{'collaborative': True, 'resizable': True}"/>
+                        </page>
+                    </notebook>
                 </sheet>
                 <chatter/>
             </form>

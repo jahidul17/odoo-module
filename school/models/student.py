@@ -1,4 +1,4 @@
-from odoo import fields, models, api,_
+from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 import base64
 
@@ -30,8 +30,31 @@ class Student(models.Model):
         ('female','Female'),
         ('other','Other'),
     ],string='Gender', default="male", tracking=True)
+
     birth_day=fields.Date(string="Date of Birth")
+    division=fields.Selection('_get_division_list')
+
+    @api.model
+    def _get_division_list(self):
+        return [('dhaka','Dhaka'),
+                ('barisal','Barisal'),
+                ('khulna','Khulna')]
+    
     address=fields.Text(string='Address')
+    about_html=fields.Html(string='Description',
+        sanitize=True,
+        strip_style=False,
+        translate=True)
+    
+    # additional_info=fields.Json(string="Extra Data")
+    # def set_json_data(self):
+    #     for record in self:
+    #         record.additional_info={
+    #             "blood_group":"A+",
+    #             "hobby": "Coding",
+    #             "emergency_contact": "123456789"
+    #         }
+    
     team_member_ids=fields.Many2many('student.model','student_tema_rel','student_id','member_id',string="Team Members")
     classmate_count = fields.Integer(compute='_compute_classmate_count', string="Classmates")
 
