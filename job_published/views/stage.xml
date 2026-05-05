@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_hr_job_form_inherit" model="ir.ui.view">
+        <field name="name">hr.job.form.inherit</field>
+        <field name="model">hr.job</field>
+        <field name="inherit_id" ref="hr.view_hr_job_form"/>
+        <field name="arch" type="xml">
+            <header>
+                <button name="action_pm_approve" string="PM Approve" 
+                        type="object" class="oe_highlight" 
+                        invisible="state != 'draft'"
+                        groups="job_published.group_job_pm"/>
+                
+                <button name="action_hr_approve" string="HR Approve" 
+                        type="object" class="oe_highlight" 
+                        invisible="state != 'pm_approved'"
+                        groups="job_published.group_job_hr"/>
+                
+                <button name="action_ceo_approve" string="CEO Approve" 
+                        type="object" class="oe_highlight" 
+                        invisible="state != 'hr_approved'"
+                        groups="job_published.group_job_ceo"/>
+
+                <field name="state" widget="statusbar" statusbar_visible="draft,pm_approved,hr_approved,published"/>
+            </header>
+        </field>
+    </record>
+</odoo>
