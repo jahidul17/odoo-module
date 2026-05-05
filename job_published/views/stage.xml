@@ -23,6 +23,9 @@
 
                 <field name="state" widget="statusbar" statusbar_visible="draft,pm_approved,hr_approved,published"/>
             </header>
+            <xpath expr="//field[@name='website_published']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
         </field>
     </record>
 </odoo>
