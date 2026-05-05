@@ -82,6 +82,13 @@
                         </group>
                     </group>
 
+                    <group string="Date Field">
+                        <!-- <field name="joining_date"/> -->
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                        <field name="joining_date" string="First Day" readonly="state == 'done'"/>
+                    </group>
+
                     <!-- TEAM COMPOSITION -->
     
                     <group string="TEAM COMPOSITION">

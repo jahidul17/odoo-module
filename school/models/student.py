@@ -1,6 +1,6 @@
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
-import base64
+import base64, time
 
 class Student(models.Model):
     _name="student.model"
@@ -45,6 +45,17 @@ class Student(models.Model):
         sanitize=True,
         strip_style=False,
         translate=True)
+    
+    joining_date=fields.Date("Date",default=fields.Date.context_today)
+    start_date=fields.Date(default=time.strftime("%Y-01-01"))
+    end_date=fields.Date(default=time.strftime("%Y-12-31"))
+
+    # @api.constrains('joining_date')
+    # def _chaeck_friday(self):
+    #     for record in self:
+    #         if record.joining_date:
+    #             if record.joining_date.weekday()==4:
+    #                 raise ValidationError("Friday is off day!")
     
     # additional_info=fields.Json(string="Extra Data")
     # def set_json_data(self):
